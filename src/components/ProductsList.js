@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const ProductsList = ({ children }) => (
-  <div>{children}</div>
+  <div className='product-list'>{children}</div>
 )
 
 ProductsList.propTypes = {

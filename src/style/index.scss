@@ -40,6 +40,7 @@ h2 {
   font-size: 28px;
   color: #292929;
   line-height: 44px;
+  margin-bottom: 0;
 }
 
 hr {
@@ -50,41 +51,79 @@ hr {
   border-top: 1px solid #DADADA;
 }
 
+.product-list {
+  margin-top: 20px;
+  @include md { margin-top: 25px; }
+  @include lg { margin-top: 30px; }
+}
+
 .product {
   background-color: $white;
   border-radius: 8px;
+  margin-bottom: 20px;
 
-  img {
-    border-radius: 8px 8px 0 0;
-    width: 100%;
-  }
+  h4 { margin: 0; padding: 0; }
 
-  .holder {
-    padding: 25px;
+  img { border-radius: 8px 8px 0 0; width: 100%; }
+
+  .holder { padding: 25px; }
+
+  .title-price { display: flex; align-items: baseline; }
+  .title { flex: 1; font-size: 21px; line-height: 25px; font-weight: normal; }
+  .price { flex: 1; font-size: 16px; line-height: 19px; font-weight: 300; text-align: right; }
+
+  .inventory {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 14px;
+    color: $sub-light;
+    margin: 10px 0 25px;
   }
 
   @include md {
     display: flex;
 
-    img {
-      border-radius: 8px 0 0 8px;
-      flex: 1.5;
-    }
+    img { border-radius: 8px 0 0 8px; flex: 1.5; }
+    .holder { flex: 2; position: relative; }
 
-    .holder {
-      flex: 2;
-    }
+    .title { font-size: 28px; line-height: 33px; }
+    .price { font-size: 21px; line-height: 25px; }
   }
+
   @include lg {
     display: flex;
 
-    img {
-      flex: 2.85;
-    }
+    img { flex: 2.85; }
+    .title { font-size: 38px; line-height: 46px; }
+    .price { font-size: 21px; line-height: 25px; }
+    .inventory{ margin-top: 20px; }
+  }
+}
 
-    .holder {
-      flex: 2;
-    }
+.add-to-cart {
+  color: $white;
+  background-color: $button-background;
+  border: 0;
+  border-radius: 100px;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 15px;
+  padding: 10px 20px;
+
+  &:hover {
+    background-color: $button-background-disabled;
+  }
+
+  &:disabled {
+    background-color: $button-background-disabled;
+  }
+
+  @include md {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    padding: 15px 25px;
   }
 }
 
