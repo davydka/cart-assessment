@@ -1,0 +1,72 @@
+@import 'vars';
+@import 'breakpoints';
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+  background-color: $background-color;
+  padding: 0;
+  margin: 0;
+}
+
+.sub {
+  font-family: $sub-font-stack;
+}
+
+div {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $link-hover-color;
+}
+
+a.disabled {
+  // sketch file used opacity to get this color
+  // opacity is expensive (still? i assume)
+  // figured out hex value without using opacity for potential performance gain
+  color: $disabled-color;
+  cursor: default;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 28px;
+  color: #292929;
+  line-height: 44px;
+}
+
+hr {
+  color: $background-color;
+  background-color: $background-color;
+  height: 1px;
+  border: none;
+  border-top: 1px solid #DADADA;
+}
+
+
+/* Breakpoints */
+#root {
+  padding: 0 20px;
+  // 576px window width and more
+  @include sm {
+    // nada
+  }
+  // 768px window width and more
+  @include md {
+    padding: 0 50px;
+  }
+  // 992px window width and more
+  @include lg {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1100px;
+    padding: 0 80px;
+  }
+}
