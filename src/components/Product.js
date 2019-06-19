@@ -3,7 +3,9 @@ import PropTypes from 'prop-types'
 
 const Product = ({ price, inventory, title, children }) => (
   <div className='product'>
-    <img src='./assets/images/61fd43ac9f4654719f2cf868dafd671433b65168.png' alt={title}/>
+    <div className="img-holder">
+      <img src='./assets/images/61fd43ac9f4654719f2cf868dafd671433b65168.png' alt={title}/>
+    </div>
 
     <div className='holder'>
       <div className='title-price'>

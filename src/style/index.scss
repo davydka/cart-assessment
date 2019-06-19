@@ -84,7 +84,8 @@ hr {
   @include md {
     display: flex;
 
-    img { border-radius: 8px 0 0 8px; flex: 1.5; }
+    img { border-radius: 8px 0 0 8px; }
+    .img-holder { flex: 1.5; }
     .holder { flex: 2; position: relative; }
 
     .title { font-size: 28px; line-height: 33px; }
