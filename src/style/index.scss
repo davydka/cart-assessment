@@ -46,6 +46,17 @@ h2 {
 .shopping-cart {
   line-height: 20px;
   font-size: 14px;
+
+  a:hover svg g {
+    fill: $link-hover-color;
+  }
+
+  a.disabled {
+    color: $disabled-color;
+  }
+  a.disabled svg g {
+    fill: $disabled-color;
+  }
 }
 
 .header {
@@ -128,10 +139,12 @@ h2 {
 
   &:hover {
     background-color: $button-background-hover;
+    cursor: pointer;
   }
 
   &:disabled {
     background-color: $button-background-disabled;
+    cursor: default;
   }
 
   @include md {

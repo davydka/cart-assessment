@@ -1,9 +1,13 @@
 import React from 'react'
 
-import shoppingcart from './shoppingcart.svg'
+import shoppingCartIcon from './shoppingCartIcon'
 
 const ShoppingCart = props => (
-  <div className='shopping-cart'><img src={shoppingcart} alt="Shopping Cart Icon"/> Your cart is empty</div>
+  <div className='shopping-cart'>
+    <a href='#'>
+      {shoppingCartIcon()} Your cart is empty
+    </a>
+  </div>
 )
 
 export default ShoppingCart
