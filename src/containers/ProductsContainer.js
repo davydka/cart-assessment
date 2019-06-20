@@ -6,15 +6,24 @@ import { getVisibleProducts } from '../reducers/products'
 import ProductItem from '../components/ProductItem'
 import ProductsList from '../components/ProductsList'
 
+import ShoppingCart from '../components/ShoppingCart'
+
 const ProductsContainer = ({ products, addToCart }) => (
-  <ProductsList>
-    {products.map(product =>
-      <ProductItem
-        key={product.id}
-        product={product}
-        onAddToCartClicked={() => addToCart(product.id)} />
-    )}
-  </ProductsList>
+  <div>
+    <div className="header">
+      <h2>Acme Store</h2>
+      <ShoppingCart/>
+    </div>
+
+    <ProductsList>
+      {products.map(product =>
+        <ProductItem
+          key={product.id}
+          product={product}
+          onAddToCartClicked={() => addToCart(product.id)} />
+      )}
+    </ProductsList>
+  </div>
 )
 
 ProductsContainer.propTypes = {
