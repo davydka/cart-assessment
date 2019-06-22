@@ -65,13 +65,14 @@ button.reset-button:focus {outline:0;}
   button:disabled {
     color: $disabled-color;
   }
+
   button:disabled svg g {
     fill: $disabled-color;
   }
 }
 
 .header {
-  border-bottom: 1px solid #DADADA;
+  border-bottom: 1px solid $divider-grey;
   padding-bottom: 18px;
 
   @include md {
@@ -182,20 +183,58 @@ button.reset-button:focus {outline:0;}
 #cart .content {
   position: relative;
   background-color: $white;
-  margin: 15% auto;
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  border-radius: 14px;
-  
+  height: 100vh;
+
+  h3 {
+    font-size: 28px;
+    line-height: 32px;
+    border-bottom: 1px solid $divider-grey;
+    padding-bottom: 18px;
+  }
+
   .close-cart-button {
     position: absolute;
     right: 20px;
     top: 20px;
+    width: 20px;
+    height: 20px;
 
-    @include md { right: 30px; top:30px; }
+    img { width: 100%; }
+
+    @include md { right: 30px; top:30px; width: 30px; height: 30px; }
+  }
+
+  @include md {
+    margin: 15% auto;
+    width: 80%;
+    max-width: 780px;
+    border: 1px solid #888;
+    height: auto;
+    border-radius: 14px;
   }
 }
+
+.cart-empty {
+  text-align: center;
+  padding: 95px 0;
+
+  .sub {
+    font-size: 16px;
+    line-height: 23px;
+    color: $sub-light;
+  }
+
+  svg {
+    width: 72px;
+    height: 57px;
+
+    g { fill: $sub-light; }
+  }
+
+  @include md { padding: 125px; }
+}
+
 
 #root {
   padding: 35px 20px;

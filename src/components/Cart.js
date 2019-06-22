@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Product from './Product'
+import shoppingCartIcon from './shoppingCartIcon'
 import shoppingCartClose from './shoppingCartClose.svg'
 
 const Cart  = ({ open, handleCartClicked, products, total, onCheckoutClicked }) => {
@@ -28,13 +29,26 @@ const Cart  = ({ open, handleCartClicked, products, total, onCheckoutClicked }) 
           <img src={shoppingCartClose} alt='Close Shopping Cart'/>
         </button>
 
-        <h3>Your Cart</h3>
-        <div>{nodes}</div>
-        <p>Total: &#36;{total}</p>
-        <button onClick={onCheckoutClicked}
-          disabled={hasProducts ? '' : 'disabled'}>
-          Checkout
-        </button>
+        <h3>Your cart</h3>
+        {hasProducts &&
+          <div>
+            <div>{nodes}</div>
+            <p>Total: &#36;{total}</p>
+            <button onClick={onCheckoutClicked}
+            disabled={hasProducts ? '' : 'disabled'}>
+              Checkout
+            </button>
+          </div>
+        }
+
+        {!hasProducts &&
+          <div className='cart-empty'>
+            {shoppingCartIcon()}
+            <div className='sub'>
+              <p>Please add some products<br/> to your cart.</p>
+            </div>
+          </div>
+        }
       </div>
     </div>
   )
