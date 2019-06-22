@@ -1,11 +1,13 @@
 import {
   ADD_TO_CART,
   CHECKOUT_REQUEST,
-  CHECKOUT_FAILURE
+  CHECKOUT_FAILURE,
+  SHOW_MODAL
 } from '../constants/ActionTypes'
 
 const initialState = {
   addedIds: [],
+  showModal: false,
   quantityById: {}
 }
 
@@ -20,6 +22,17 @@ const addedIds = (state = initialState.addedIds, action) => {
       return state
   }
 }
+
+const showModal = (state = initialState.showModal, action) => {
+  switch(action.type) {
+    case SHOW_MODAL:
+      return !state
+    default:
+      return state
+  }
+}
+
+export const getShowModal = state => state.showModal
 
 const quantityById = (state = initialState.quantityById, action) => {
   switch (action.type) {
@@ -47,6 +60,7 @@ const cart = (state = initialState, action) => {
     default:
       return {
         addedIds: addedIds(state.addedIds, action),
+        showModal: showModal(state.showModal, action),
         quantityById: quantityById(state.quantityById, action)
       }
   }
