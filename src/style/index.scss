@@ -28,9 +28,6 @@ a:hover {
 }
 
 a.disabled {
-  // sketch file used opacity to get this color
-  // opacity is expensive (still? i assume)
-  // figured out hex value without using opacity for potential performance gain
   color: $disabled-color;
   cursor: default;
 }
@@ -160,6 +157,8 @@ button.reset-button:focus {outline:0;}
     background-color: $button-background-disabled;
     cursor: default;
   }
+
+  &:focus {outline:0;}
 
   @include md {
     position: absolute;
