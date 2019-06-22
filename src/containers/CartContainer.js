@@ -22,7 +22,8 @@ CartContainer.propTypes = {
     quantity: PropTypes.number.isRequired
   })).isRequired,
   total: PropTypes.string,
-  checkout: PropTypes.func.isRequired
+  checkout: PropTypes.func.isRequired,
+  showModal: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => ({

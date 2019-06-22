@@ -43,7 +43,9 @@ const Cart  = ({ open, handleCartClicked, products, total, onCheckoutClicked }) 
 Cart.propTypes = {
   products: PropTypes.array,
   total: PropTypes.string,
-  onCheckoutClicked: PropTypes.func
+  onCheckoutClicked: PropTypes.func,
+  handleCartClicked: PropTypes.func,
+  open: PropTypes.bool
 }
 
 export default Cart
