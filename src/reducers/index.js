@@ -7,6 +7,8 @@ export default combineReducers({
   products
 })
 
+export const getModalOpen = state => fromCart.getShowModal(state.cart)
+
 const getAddedIds = state => fromCart.getAddedIds(state.cart)
 const getQuantity = (state, id) => fromCart.getQuantity(state.cart, id)
 const getProduct = (state, id) => fromProducts.getProduct(state.products, id)
