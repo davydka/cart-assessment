@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Product from './Product'
+import shoppingCartClose from './shoppingCartClose.svg'
 
-const Cart  = ({ products, total, onCheckoutClicked }) => {
+const Cart  = ({ open, handleCartClicked, products, total, onCheckoutClicked }) => {
   const hasProducts = products.length > 0
   const nodes = hasProducts ? (
     products.map(product =>
@@ -17,9 +18,16 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
     <em>Please add some products to cart.</em>
   )
 
+  if(!open) {
+    return null;
+  }
   return (
     <div id='cart'>
-      <div className="content">
+      <div className='content'>
+        <button className='reset-button close-cart-button' onClick={handleCartClicked}>
+          <img src={shoppingCartClose} alt='Close Shopping Cart'/>
+        </button>
+
         <h3>Your Cart</h3>
         <div>{nodes}</div>
         <p>Total: &#36;{total}</p>
