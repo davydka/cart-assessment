@@ -43,18 +43,32 @@ h2 {
   margin: 0;
 }
 
+button.reset-button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+button.reset-button:focus {outline:0;}
+
 .shopping-cart {
   line-height: 20px;
   font-size: 14px;
 
-  a:hover svg g {
+  button:hover {
+    color: $link-hover-color;
+  }
+  
+  button:hover svg g {
     fill: $link-hover-color;
   }
 
-  a.disabled {
+  button:disabled {
     color: $disabled-color;
   }
-  a.disabled svg g {
+  button:disabled svg g {
     fill: $disabled-color;
   }
 }
@@ -156,7 +170,6 @@ h2 {
 }
 
 #cart {
-  display: none;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -168,12 +181,21 @@ h2 {
 }
 
 #cart .content {
+  position: relative;
   background-color: $white;
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
   border-radius: 14px;
+  
+  .close-cart-button {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+
+    @include md { right: 30px; top:30px; }
+  }
 }
 
 #root {
