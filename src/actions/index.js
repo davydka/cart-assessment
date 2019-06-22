@@ -12,6 +12,12 @@ export const getAllProducts = () => dispatch => {
   })
 }
 
+export const showModal = () => dispatch => {
+  dispatch({
+    type: types.SHOW_MODAL
+  })
+}
+
 const addToCartUnsafe = productId => ({
   type: types.ADD_TO_CART,
   productId
