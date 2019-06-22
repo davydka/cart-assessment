@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const Product = ({ price, inventory, title, children }) => (
   <div className='product'>
-    <div className="img-holder">
+    <div className='img-holder'>
       <img src={`./assets/images/${title.toLowerCase()}.png`} alt={title}/>
     </div>
 
