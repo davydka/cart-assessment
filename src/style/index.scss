@@ -361,9 +361,15 @@ button.reset-button:focus {outline:0;}
   color: $mine-shaft;
   border: 1px solid $mine-shaft;
 
-  &:hover {
+  &:hover:enabled {
     background-color: $mine-shaft;
     color: $white;
+  }
+
+  &:disabled {
+    color: $dusty-gray;
+    border: 1px solid $dusty-gray;
+    cursor: default;
   }
 
   @include sm {
