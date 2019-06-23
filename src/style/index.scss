@@ -3,8 +3,8 @@
 
 body {
   font: 100% $font-stack;
-  color: $primary-color;
-  background-color: $background-color;
+  color: $mine-shaft;
+  background-color: $athens-gray;
   padding: 0;
   margin: 0;
 }
@@ -19,16 +19,16 @@ div {
 }
 
 a {
-  color: $primary-color;
+  color: $mine-shaft;
   text-decoration: none;
 }
 
 a:hover {
-  color: $link-hover-color;
+  color: $steel-blue;
 }
 
 a.disabled {
-  color: $disabled-color;
+  color: $silver;
   cursor: default;
 }
 
@@ -56,24 +56,24 @@ button.reset-button:focus {outline:0;}
   font-size: 14px;
 
   button:hover {
-    color: $link-hover-color;
+    color: $steel-blue;
   }
   
   button:hover svg g {
-    fill: $link-hover-color;
+    fill: $steel-blue;
   }
 
   button:disabled {
-    color: $disabled-color;
+    color: $silver;
   }
 
   button:disabled svg g {
-    fill: $disabled-color;
+    fill: $silver;
   }
 }
 
 .header {
-  border-bottom: 1px solid $divider-grey;
+  border-bottom: 1px solid $alto;
   padding-bottom: 18px;
 
   @include md {
@@ -115,7 +115,7 @@ button.reset-button:focus {outline:0;}
     font-weight: 300;
     font-size: 12px;
     line-height: 14px;
-    color: $sub-light;
+    color: $dusty-gray;
     margin: 10px 0 25px;
   }
 
@@ -142,7 +142,7 @@ button.reset-button:focus {outline:0;}
 
 .add-to-cart {
   color: $white;
-  background-color: $button-background;
+  background-color: $danube;
   border: 0;
   border-radius: 100px;
   text-transform: uppercase;
@@ -151,12 +151,12 @@ button.reset-button:focus {outline:0;}
   padding: 10px 20px;
 
   &:hover {
-    background-color: $button-background-hover;
+    background-color: $steel-blue;
     cursor: pointer;
   }
 
   &:disabled {
-    background-color: $button-background-disabled;
+    background-color: $light-water;
     cursor: default;
   }
 
@@ -190,7 +190,7 @@ button.reset-button:focus {outline:0;}
   h3 {
     font-size: 28px;
     line-height: 32px;
-    border-bottom: 1px solid $divider-grey;
+    border-bottom: 1px solid $alto;
     padding-bottom: 18px;
   }
 
@@ -223,14 +223,14 @@ button.reset-button:focus {outline:0;}
   .sub {
     font-size: 16px;
     line-height: 23px;
-    color: $sub-light;
+    color: $dusty-gray;
   }
 
   svg {
     width: 72px;
     height: 57px;
 
-    g { fill: $sub-light; }
+    g { fill: $dusty-gray; }
   }
 
   @include md { padding: 125px; }
@@ -273,7 +273,7 @@ button.reset-button:focus {outline:0;}
 }
 
 #cart .items-container {
-  border-bottom: 1px solid $divider-grey;
+  border-bottom: 1px solid $alto;
   margin-bottom: 8px;
 }
 
@@ -287,12 +287,12 @@ button.reset-button:focus {outline:0;}
   button {
     width: 33.33%;
     height: 40px;
-    background: $background-color;
+    background: $athens-gray;
   }
 
   button.center {
     background: $white;
-    border: 1px solid $background-color;
+    border: 1px solid $athens-gray;
     border-left: none;
     border-right: none;
     cursor: default;
@@ -312,7 +312,7 @@ button.reset-button:focus {outline:0;}
 
   button:first-of-type:hover:enabled,
   button:last-of-type:hover:enabled {
-    background-color: $button-background-hover;
+    background-color: $steel-blue;
     cursor: pointer;
   }
 
@@ -321,7 +321,7 @@ button.reset-button:focus {outline:0;}
   }
 
   button:disabled {
-    background-color: $button-group-background-disabled;
+    background-color: $alabaster;
     cursor: default;
   }
 }
@@ -342,7 +342,7 @@ button.reset-button:focus {outline:0;}
   }
 
   &.divider {
-    border-bottom: 1px solid $divider-grey;
+    border-bottom: 1px solid $alto;
     padding-bottom: 10px;
     margin-bottom: 15px;
   }
@@ -354,11 +354,11 @@ button.reset-button:focus {outline:0;}
   line-height: 17px;
   height: 44px;
   width: 100%;
-  color: $primary-color;
-  border: 1px solid $primary-color;
+  color: $mine-shaft;
+  border: 1px solid $mine-shaft;
 
   &:hover {
-    background-color: $primary-color;
+    background-color: $mine-shaft;
     color: $white;
   }
 }
@@ -370,12 +370,12 @@ button.reset-button:focus {outline:0;}
   font-size: 14px;
   line-height: 17px;
   color: $white;
-  background-color: $button-checkout;
+  background-color: $danube;
   height: 44px;
   width: 100%;
 
   &:hover {
-    background-color: $button-background-hover;
+    background-color: $steel-blue;
   }
 }
 
