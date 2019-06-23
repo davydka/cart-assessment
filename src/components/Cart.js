@@ -29,7 +29,7 @@ const Cart  = ({ open, handleCartClicked, products, total, onCheckoutClicked }) 
   )
 
   if(!open) {
-    return null;
+    return null
   }
   return (
     <div id='cart'>

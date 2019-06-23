@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const shoppingButtonAdd = () => (
   <svg width="16px" height="15px" viewBox="0 0 16 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
