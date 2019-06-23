@@ -1,6 +1,6 @@
 import {
   ADD_TO_CART,
-  // REMOVE_FROM_CART,
+  REMOVE_FROM_CART,
   ENTIRELY_REMOVE_FROM_CART,
   CHECKOUT_REQUEST,
   CHECKOUT_FAILURE,
@@ -54,16 +54,11 @@ const quantityById = (state = initialState.quantityById, action) => {
       const targetId = action.productId
       const { [targetId]:value, ...targetState } = state
       return targetState
-      /*
     case REMOVE_FROM_CART:
-      const targetQuantity = action.productId - 1
-      console.log(state[targetId])
-      console.log(targetQuantity)
-      console.log(state)
+      const targetQuantity = state[action.productId] - 1
       return { ...state,
-        [targetId]: targetQuantity
+        [action.productId]: targetQuantity
       }
-       */
     default:
       return state
   }

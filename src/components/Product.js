@@ -3,7 +3,17 @@ import PropTypes from 'prop-types'
 import shoppingButtonAdd from './shoppingButtonAdd'
 import shoppingButtonDelete from './shoppingButtonDelete'
 
-const Product = ({ price, inventory, showingInCart, handleEntirelyRemoveClicked, title, quantity, children }) => {
+const Product = ({
+  price,
+  inventory,
+  showingInCart,
+  handleEntirelyRemoveClicked,
+  onAddToCartClicked,
+  onRemoveFromCartClicked,
+  title,
+  quantity,
+  children
+}) => {
   return (
     <div>
       <div className='product'>
@@ -26,7 +36,10 @@ const Product = ({ price, inventory, showingInCart, handleEntirelyRemoveClicked,
       </div>
       {showingInCart &&
       <div className='button-group cart-button-group'>
-        <button className='reset-button'>
+        <button
+          className='reset-button'
+          onClick={onRemoveFromCartClicked}
+          disabled={!quantity}>
           {shoppingButtonDelete()}
         </button>
 
@@ -36,6 +49,7 @@ const Product = ({ price, inventory, showingInCart, handleEntirelyRemoveClicked,
 
         <button
           className='reset-button'
+          onClick={onAddToCartClicked}
           disabled={!inventory}>
           {shoppingButtonAdd()}
         </button>
@@ -50,6 +64,8 @@ Product.propTypes = {
   inventory: PropTypes.number,
   quantity: PropTypes.number,
   handleEntirelyRemoveClicked: PropTypes.func,
+  onAddToCartClicked: PropTypes.func,
+  onRemoveFromCartClicked: PropTypes.func,
   showingInCart: PropTypes.bool,
   title: PropTypes.string,
   children: PropTypes.node

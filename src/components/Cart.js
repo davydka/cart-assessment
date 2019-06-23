@@ -4,7 +4,16 @@ import Product from './Product'
 import shoppingCartIcon from './shoppingCartIcon'
 import shoppingCartClose from './shoppingCartClose.svg'
 
-const Cart  = ({ open, handleCartClicked, handleEntirelyRemoveClicked, products, total, onCheckoutClicked }) => {
+const Cart  = ({
+  open,
+  handleCartClicked,
+  handleEntirelyRemoveClicked,
+  addToCart,
+  removeFromCart,
+  products,
+  total,
+  onCheckoutClicked
+}) => {
   const taxAmount = 0.0875
   const tax = (total * taxAmount).toFixed(2)
   const grandTotal = parseFloat(total) + parseFloat(tax)
@@ -15,6 +24,8 @@ const Cart  = ({ open, handleCartClicked, handleEntirelyRemoveClicked, products,
       return (
           <Product
             handleEntirelyRemoveClicked={() => handleEntirelyRemoveClicked(product.id)}
+            onAddToCartClicked={() => addToCart(product.id)}
+            onRemoveFromCartClicked={() => removeFromCart(product.id)}
             showingInCart={true}
             title={product.title}
             price={product.price}
@@ -90,6 +101,8 @@ Cart.propTypes = {
   products: PropTypes.array,
   total: PropTypes.string,
   handleEntirelyRemoveClicked: PropTypes.func,
+  addToCart: PropTypes.func,
+  removeFromCart: PropTypes.func,
   onCheckoutClicked: PropTypes.func,
   handleCartClicked: PropTypes.func,
   open: PropTypes.bool

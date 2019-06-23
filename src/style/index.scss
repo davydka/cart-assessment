@@ -55,6 +55,10 @@ button.reset-button:focus {outline:0;}
   line-height: 20px;
   font-size: 14px;
 
+  svg {
+    margin-right: 5px;
+  }
+
   button:hover {
     color: $steel-blue;
   }

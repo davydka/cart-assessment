@@ -11,6 +11,13 @@ const products = (state, action) => {
     case ENTIRELY_REMOVE_FROM_CART:
       return {...state, inventory: state.initialInventory}
     case REMOVE_FROM_CART:
+      const targetInventory = state.inventory + 1
+      if(targetInventory > state.initialInventory){
+        return {
+          ...state,
+          inventory: state.initialInventory
+        }
+      }
       return {
         ...state,
         inventory: state.inventory + 1

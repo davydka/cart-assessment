@@ -9,7 +9,9 @@ import ProductsList from '../components/ProductsList'
 import ShoppingCart from '../components/ShoppingCart'
 
 const ProductsContainer = ({ products, cartProducts, addToCart, showModal }) => {
+  console.log(products)
   const cartCount = cartProducts.reduce((accumulator, item) => {
+    console.log(item)
     return accumulator + item.quantity
   }, 0)
 
@@ -17,7 +19,7 @@ const ProductsContainer = ({ products, cartProducts, addToCart, showModal }) => 
     <div>
       <div className='header'>
         <h2>Acme Store</h2>
-        <ShoppingCart count={cartCount} handleCartClicked={() => showModal()} />
+        <ShoppingCart quantityCount={cartCount} itemCount={cartProducts.length} handleCartClicked={() => showModal()} />
       </div>
 
       <ProductsList>
