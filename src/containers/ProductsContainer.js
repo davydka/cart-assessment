@@ -9,9 +9,7 @@ import ProductsList from '../components/ProductsList'
 import ShoppingCart from '../components/ShoppingCart'
 
 const ProductsContainer = ({ products, cartProducts, addToCart, showModal }) => {
-  console.log(products)
   const cartCount = cartProducts.reduce((accumulator, item) => {
-    console.log(item)
     return accumulator + item.quantity
   }, 0)
 
