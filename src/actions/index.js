@@ -29,6 +29,15 @@ export const addToCart = productId => (dispatch, getState) => {
   }
 }
 
+const entirelyRemoveFromCartUnsafe = productId => ({
+  type: types.ENTIRELY_REMOVE_FROM_CART,
+  productId
+})
+
+export const entirelyRemoveFromCart = productId => (dispatch, getState) => {
+  dispatch(entirelyRemoveFromCartUnsafe(productId))
+}
+
 export const checkout = products => (dispatch, getState) => {
   const { cart } = getState()
 

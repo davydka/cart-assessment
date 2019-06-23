@@ -1,5 +1,7 @@
 import {
   ADD_TO_CART,
+  // REMOVE_FROM_CART,
+  ENTIRELY_REMOVE_FROM_CART,
   CHECKOUT_REQUEST,
   CHECKOUT_FAILURE,
   SHOW_MODAL
@@ -18,6 +20,13 @@ const addedIds = (state = initialState.addedIds, action) => {
         return state
       }
       return [ ...state, action.productId ]
+
+    case ENTIRELY_REMOVE_FROM_CART:
+      if (state.indexOf(action.productId) !== -1) {
+        return state.filter(id => id !== action.productId)
+      }
+      return state
+
     default:
       return state
   }
@@ -41,6 +50,20 @@ const quantityById = (state = initialState.quantityById, action) => {
       return { ...state,
         [productId]: (state[productId] || 0) + 1
       }
+    case ENTIRELY_REMOVE_FROM_CART:
+      const targetId = action.productId
+      const { [targetId]:value, ...targetState } = state
+      return targetState
+      /*
+    case REMOVE_FROM_CART:
+      const targetQuantity = action.productId - 1
+      console.log(state[targetId])
+      console.log(targetQuantity)
+      console.log(state)
+      return { ...state,
+        [targetId]: targetQuantity
+      }
+       */
     default:
       return state
   }

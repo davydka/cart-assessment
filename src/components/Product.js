@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import shoppingButtonAdd from './shoppingButtonAdd'
 import shoppingButtonDelete from './shoppingButtonDelete'
 
-const Product = ({ price, inventory, showingInCart, title, quantity, children }) => {
+const Product = ({ price, inventory, showingInCart, handleEntirelyRemoveClicked, title, quantity, children }) => {
   return (
     <div>
       <div className='product'>
@@ -16,7 +16,7 @@ const Product = ({ price, inventory, showingInCart, title, quantity, children })
             <h4 className='title'>{title}</h4> <div className='price'>&#36;{price}</div>
           </div>
           {showingInCart &&
-          <button className='reset-button sub remove'>Remove</button>
+          <button className='reset-button sub remove' onClick={handleEntirelyRemoveClicked}>Remove</button>
           }
           {!showingInCart &&
           <div className='inventory sub'>{inventory ? ` ${inventory} remaining` : 'sold out'}</div>
@@ -48,6 +48,8 @@ const Product = ({ price, inventory, showingInCart, title, quantity, children })
 Product.propTypes = {
   price: PropTypes.number,
   inventory: PropTypes.number,
+  quantity: PropTypes.number,
+  handleRemoveClicked: PropTypes.func,
   showingInCart: PropTypes.bool,
   title: PropTypes.string,
   children: PropTypes.node
