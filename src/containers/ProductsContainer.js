@@ -2,17 +2,22 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { addToCart, showModal } from '../actions'
+import { getCartProducts } from '../reducers'
 import { getVisibleProducts } from '../reducers/products'
 import ProductItem from '../components/ProductItem'
 import ProductsList from '../components/ProductsList'
 import ShoppingCart from '../components/ShoppingCart'
 
-const ProductsContainer = ({ products, addToCart, showModal }) => {
+const ProductsContainer = ({ products, cartProducts, addToCart, showModal }) => {
+  const cartCount = cartProducts.reduce((accumulator, item) => {
+    return accumulator + item.quantity
+  }, 0)
+
   return (
     <div>
       <div className='header'>
         <h2>Acme Store</h2>
-        <ShoppingCart handleCartClicked={() => showModal()} />
+        <ShoppingCart count={cartCount} handleCartClicked={() => showModal()} />
       </div>
 
       <ProductsList>
@@ -34,12 +39,19 @@ ProductsContainer.propTypes = {
     price: PropTypes.number.isRequired,
     inventory: PropTypes.number.isRequired
   })).isRequired,
+  cartProducts: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    inventory: PropTypes.number.isRequired
+  })).isRequired,
   addToCart: PropTypes.func.isRequired,
   showModal: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
-  products: getVisibleProducts(state.products)
+  products: getVisibleProducts(state.products),
+  cartProducts: getCartProducts(state)
 })
 
 export default connect(
