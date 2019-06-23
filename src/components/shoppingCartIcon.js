@@ -1,6 +1,6 @@
 import React from 'react';
 
-const shoppingCartIcon = props => (
+const shoppingCartIcon = () => (
   <svg width="17px" height="14px" viewBox="0 0 17 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
       <g id="v2" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g id="Mobile" transform="translate(-18.000000, -66.000000)" fill="#292929" fillRule="nonzero">
