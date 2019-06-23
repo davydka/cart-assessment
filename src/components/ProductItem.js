@@ -4,6 +4,7 @@ import Product from './Product'
 
 const ProductItem = ({ product, onAddToCartClicked }) => (
   <Product
+    showingInCart={false}
     title={product.title}
     price={product.price}
     inventory={product.inventory}>

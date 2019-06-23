@@ -5,15 +5,24 @@ import shoppingCartIcon from './shoppingCartIcon'
 import shoppingCartClose from './shoppingCartClose.svg'
 
 const Cart  = ({ open, handleCartClicked, products, total, onCheckoutClicked }) => {
+  const taxAmount = 0.0875
+  const tax = (total * taxAmount).toFixed(2)
+  const grandTotal = parseFloat(total) + parseFloat(tax)
+
   const hasProducts = products.length > 0
   const nodes = hasProducts ? (
-    products.map(product =>
-      <Product
-        title={product.title}
-        price={product.price}
-        quantity={product.quantity}
-        key={product.id}
-      />
+    products.map(product => {
+      return (
+          <Product
+            showingInCart={true}
+            title={product.title}
+            price={product.price}
+            quantity={product.quantity}
+            inventory={product.inventory}
+            key={product.id}
+          />
+        )
+      }
     )
   ) : (
     <em>Please add some products to cart.</em>
@@ -31,12 +40,34 @@ const Cart  = ({ open, handleCartClicked, products, total, onCheckoutClicked }) 
 
         <h3>Your cart</h3>
         {hasProducts &&
-          <div>
-            <div>{nodes}</div>
-            <p>Total: &#36;{total}</p>
-            <button onClick={onCheckoutClicked}
-            disabled={hasProducts ? '' : 'disabled'}>
-              Checkout
+          <div className='cart-items'>
+            <div className='items-container'>{nodes}</div>
+
+            <div className='price-row'>
+              <div className='column'>Subtotal:</div>
+              <div className='column'>&#36;{total}</div>
+            </div>
+
+            <div className='price-row divider'>
+              <div className='column'>Tax:</div>
+              <div className='column'>&#36;{tax}</div>
+            </div>
+
+            <div className='price-row'>
+              <div className='column'>Total:</div>
+              <div className='column'>&#36;{grandTotal}</div>
+            </div>
+
+            <button
+              className='reset-button update'
+              onClick={onCheckoutClicked}>
+              Update
+            </button>
+
+            <button
+              className='reset-button checkout'
+              onClick={onCheckoutClicked}>
+              CHECKOUT
             </button>
           </div>
         }
