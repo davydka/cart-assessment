@@ -89,6 +89,7 @@ const Cart  = ({ open, handleCartClicked, handleEntirelyRemoveClicked, products,
 Cart.propTypes = {
   products: PropTypes.array,
   total: PropTypes.string,
+  handleEntirelyRemoveClicked: PropTypes.func,
   onCheckoutClicked: PropTypes.func,
   handleCartClicked: PropTypes.func,
   open: PropTypes.bool
