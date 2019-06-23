@@ -185,7 +185,7 @@ button.reset-button:focus {outline:0;}
   position: relative;
   background-color: $white;
   padding: 15px;
-  height: 100vh;
+  min-height: 100vh;
 
   h3 {
     font-size: 28px;
@@ -349,7 +349,7 @@ button.reset-button:focus {outline:0;}
 }
 
 #cart button.update {
-  margin-top: 20px;
+  margin: 20px 0 55px;
   font-size: 14px;
   line-height: 17px;
   height: 44px;
@@ -360,6 +360,12 @@ button.reset-button:focus {outline:0;}
   &:hover {
     background-color: $mine-shaft;
     color: $white;
+  }
+
+  @include sm {
+    position: relative;
+    width: calc(50% -  10px);
+    margin-right: 10px;
   }
 }
 
@@ -377,20 +383,22 @@ button.reset-button:focus {outline:0;}
   &:hover {
     background-color: $steel-blue;
   }
+
+  @include sm {
+    position: relative;
+    width: calc(50% - 10px);
+    margin-left: 10px;
+  }
 }
 
 
 #root {
   padding: 35px 20px;
-  // 576px window width and more
-  @include sm {
-    // nada
-  }
-  // 768px window width and more
+
   @include md {
     padding: 50px;
   }
-  // 992px window width and more
+
   @include lg {
     margin-left: auto;
     margin-right: auto;
