@@ -49,7 +49,7 @@ Product.propTypes = {
   price: PropTypes.number,
   inventory: PropTypes.number,
   quantity: PropTypes.number,
-  handleRemoveClicked: PropTypes.func,
+  handleEntirelyRemoveClicked: PropTypes.func,
   showingInCart: PropTypes.bool,
   title: PropTypes.string,
   children: PropTypes.node
