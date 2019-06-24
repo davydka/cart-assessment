@@ -14,7 +14,6 @@ const getQuantity = (state, id) => fromCart.getQuantity(state.cart, id)
 const getProduct = (state, id) => fromProducts.getProduct(state.products, id)
 
 export const getTotal = state => {
-  console.log(state)
   return (
     getAddedIds(state)
     .reduce((total, id) =>

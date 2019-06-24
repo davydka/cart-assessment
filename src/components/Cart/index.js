@@ -49,7 +49,6 @@ class Cart  extends React.Component {
       onCheckoutClicked
     } = this.props
     const taxAmount = 0.0875
-    console.log(total)
     const tax = (total * taxAmount).toFixed(2)
     const grandTotal = (parseFloat(total) + parseFloat(tax)).toFixed(2)
 
