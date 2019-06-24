@@ -1,12 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { addToCart, showModal } from '../actions'
-import { getCartProducts } from '../reducers'
-import { getVisibleProducts } from '../reducers/products'
-import ProductItem from '../components/ProductItem'
-import ProductsList from '../components/ProductsList'
-import ShoppingCart from '../components/ShoppingCart'
+import { addToCart, showModal } from '../../actions'
+import { getCartProducts } from '../../reducers'
+import { getVisibleProducts } from '../../reducers/products'
+import ProductItem from '../../components/ProductItem'
+import ProductsList from '../../components/ProductList'
+import ShoppingCart from '../../components/ShoppingCart'
+
+import './styles.scss';
 
 const ProductsContainer = ({ products, cartProducts, addToCart, showModal }) => {
   const cartCount = cartProducts.reduce((accumulator, item) => {

@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import shoppingCartIcon from './shoppingCartIcon'
+import shoppingCartIcon from '../svg/shoppingCartIcon'
+import './styles.scss';
 
-const ShoppingCart = ({handleCartClicked, quantityCount, itemCount}) => {
+const Index = ({handleCartClicked, quantityCount, itemCount}) => {
   return (
     <div className='shopping-cart'>
       <button className='reset-button' onClick={handleCartClicked}>
@@ -17,11 +18,11 @@ const ShoppingCart = ({handleCartClicked, quantityCount, itemCount}) => {
   )
 }
 
-ShoppingCart.propTypes = {
+Index.propTypes = {
   handleCartClicked: PropTypes.func,
   quantityCount: PropTypes.number,
   itemCount: PropTypes.number
 }
 
 
-export default ShoppingCart
+export default Index

@@ -1,0 +1,19 @@
+@import '../../style/vars';
+@import '../../style/breakpoints';
+
+.header {
+  border-bottom: 1px solid $alto;
+  padding-bottom: 18px;
+
+  @include md {
+    display: flex;
+
+    h2 { flex: 1 1 auto; }
+
+    .shopping-cart {
+      flex: 1 1 auto;
+      text-align: right;
+      line-height: 44px;
+    }
+  }
+}

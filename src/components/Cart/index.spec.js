@@ -1,7 +1,7 @@
 import React from 'react'
-import { shallow } from 'enzyme'
-import Cart from './Cart'
-import Product from './Product'
+import { shallow } from 'enzyme/build'
+import Cart from './index'
+import Product from '../Product'
 
 const setup = (total, products = []) => {
   const actions = {

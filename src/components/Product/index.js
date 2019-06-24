@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import shoppingButtonAdd from './shoppingButtonAdd'
-import shoppingButtonDelete from './shoppingButtonDelete'
+import shoppingButtonAdd from '../svg/shoppingButtonAdd'
+import shoppingButtonDelete from '../svg/shoppingButtonDelete'
+
+import './styles.scss'
 
 const Product = ({
   price,

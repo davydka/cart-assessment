@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { checkout, showModal, entirelyRemoveFromCart, removeFromCart, addToCart } from '../actions'
-import { getTotal, getCartProducts, getModalOpen } from '../reducers'
-import Cart from '../components/Cart'
+import { checkout, showModal, entirelyRemoveFromCart, removeFromCart, addToCart } from '../../actions'
+import { getTotal, getCartProducts, getModalOpen } from '../../reducers'
+import Cart from '../../components/Cart'
 
-const CartContainer = ({
+const Index = ({
   open,
   products,
   total,
@@ -26,7 +26,7 @@ const CartContainer = ({
     onCheckoutClicked={() => checkout(products)} />
 )
 
-CartContainer.propTypes = {
+Index.propTypes = {
   products: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     productTitle: PropTypes.string.isRequired,
@@ -52,4 +52,4 @@ const mapStateToProps = (state) => ({
 export default connect(
   mapStateToProps,
   { checkout, showModal, entirelyRemoveFromCart, addToCart, removeFromCart }
-)(CartContainer)
+)(Index)

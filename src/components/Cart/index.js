@@ -1,8 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Product from './Product'
-import shoppingCartIcon from './shoppingCartIcon'
-import shoppingCartClose from './shoppingCartClose.svg'
+import Product from '../Product'
+import shoppingCartIcon from '../svg/shoppingCartIcon'
+import shoppingCartClose from '../svg/shoppingCartClose.svg'
+
+import './styles.scss'
 
 class Cart  extends React.Component {
   constructor(props) {
@@ -47,6 +49,7 @@ class Cart  extends React.Component {
       onCheckoutClicked
     } = this.props
     const taxAmount = 0.0875
+    console.log(total)
     const tax = (total * taxAmount).toFixed(2)
     const grandTotal = (parseFloat(total) + parseFloat(tax)).toFixed(2)
 

@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Product from './Product'
+import Product from '../Product'
+
+import './styles.scss'
 
 const ProductItem = ({ product, onAddToCartClicked }) => (
   <Product

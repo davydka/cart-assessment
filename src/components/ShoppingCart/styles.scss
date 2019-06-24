@@ -1,0 +1,26 @@
+@import '../../style/vars';
+
+.shopping-cart {
+  line-height: 20px;
+  font-size: 14px;
+
+  svg {
+    margin-right: 5px;
+  }
+
+  button:hover {
+    color: $steel-blue;
+  }
+
+  button:hover svg g {
+    fill: $steel-blue;
+  }
+
+  button:disabled {
+    color: $silver;
+  }
+
+  button:disabled svg g {
+    fill: $silver;
+  }
+}
