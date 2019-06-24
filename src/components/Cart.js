@@ -84,6 +84,7 @@ class Cart  extends React.Component {
             i++;
           }
         }
+        return true
       })
       this.resetState()
     }
@@ -100,8 +101,8 @@ class Cart  extends React.Component {
               onAddToCartClicked={() => handleAddClick(product)}
               onRemoveFromCartClicked={() => handleRemoveClick(product)}
               showingInCart={true}
-              title={product.title}
-              price={product.price}
+              title={product.productTitle}
+              price={product.price.value}
               quantity={quantity}
               inventory={inventory}
               key={product.id}
