@@ -1,0 +1,32 @@
+@import '../../style/vars';
+@import '../../style/breakpoints';
+
+.add-to-cart {
+  color: $white;
+  background-color: $danube;
+  border: 0;
+  border-radius: 100px;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 15px;
+  padding: 10px 20px;
+
+  &:hover {
+    background-color: $steel-blue;
+    cursor: pointer;
+  }
+
+  &:disabled {
+    background-color: $light-water;
+    cursor: default;
+  }
+
+  &:focus {outline:0;}
+
+  @include md {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    padding: 15px 25px;
+  }
+}

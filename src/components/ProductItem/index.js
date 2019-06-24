@@ -1,25 +1,30 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Product from './Product'
+import Product from '../Product'
+
+import './styles.scss'
 
 const ProductItem = ({ product, onAddToCartClicked }) => (
-  <div style={{ marginBottom: 20 }}>
-    <Product
-      title={product.title}
-      price={product.price}
-      inventory={product.inventory} />
+  <Product
+    showingInCart={false}
+    title={product.productTitle}
+    price={product.price.value}
+    inventory={product.inventory}>
     <button
+      className='add-to-cart'
       onClick={onAddToCartClicked}
       disabled={product.inventory > 0 ? '' : 'disabled'}>
-      {product.inventory > 0 ? 'Add to cart' : 'Sold Out'}
+      Add to cart
     </button>
-  </div>
+  </Product>
 )
 
 ProductItem.propTypes = {
   product: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
+    price: PropTypes.shape({
+      value: PropTypes.number.isRequired,
+      currency: PropTypes.string.isRequired
+    }),
     inventory: PropTypes.number.isRequired
   }).isRequired,
   onAddToCartClicked: PropTypes.func.isRequired

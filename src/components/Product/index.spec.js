@@ -1,6 +1,6 @@
 import React from 'react'
-import { shallow } from 'enzyme'
-import Product from './Product'
+import { shallow } from 'enzyme/build'
+import Product from './index'
 
 const setup = props => {
   const component = shallow(
