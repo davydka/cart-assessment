@@ -1,8 +1,0 @@
-@import '../../style/vars';
-@import '../../style/breakpoints';
-
-.product-list {
-  margin-top: 20px;
-  @include md { margin-top: 25px; }
-  @include lg { margin-top: 30px; }
-}
