@@ -1,17 +1,8 @@
-import axios from 'axios'
+import _products from './products.json'
 
 const TIMEOUT = 100
-const apiUrl = 'http://tech.work.co/shopping-cart/products.json'
 
 export default {
-  getProducts: (cb) => {
-    return axios.get(apiUrl)
-      .then(response => {
-        cb(response.data)
-      })
-      .catch(error => {
-        throw(error);
-      })
-  },
+  getProducts: (cb, timeout) => setTimeout(() => cb(_products), timeout || TIMEOUT),
   buyProducts: (payload, cb, timeout) => setTimeout(() => cb(), timeout || TIMEOUT)
 }

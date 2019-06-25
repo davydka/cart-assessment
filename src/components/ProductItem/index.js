@@ -7,6 +7,7 @@ import './styles.scss'
 const ProductItem = ({ product, onAddToCartClicked }) => (
   <Product
     showingInCart={false}
+    id={product.id}
     title={product.productTitle}
     price={product.price.value}
     inventory={product.inventory}>
