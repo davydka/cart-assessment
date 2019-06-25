@@ -14,6 +14,4 @@ To start a development server:
 yarn start
 ```
 
-## Tasks
-
-[tasks](/tasks.md)
+## [Tasks](/tasks.md)
