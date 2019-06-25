@@ -48,4 +48,4 @@ This is a copy of the [Redux Shopping Cart Example](https://github.com/reactjs/r
     * Uses a growing personal library of GLSL shader functions being developed while working through [The Book of Shaders](https://thebookofshaders.com/)
         * Shader functions so far include "divs" and images that can positioned on a pixel level (frag shaders have a 0.0 - 1.0 coordinate system)
 
-![Psych Shopping Cart](https://media.giphy.com/media/gdq0A1qlKxXwUOgf4f/giphy.gif)
+![Psych Shopping Cart](giphy.gif)
